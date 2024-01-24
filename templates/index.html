@@ -1,0 +1,115 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block title%}Home{%endblock%}
+
+{% block hero%}
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'assets/img/about.jpg' %}" class="d-block w-100" alt="...">
+      </div>
+      <!-- <div class="carousel-item">
+        <img src="{% static 'assets/img/about-2.jpg' %}" class="d-block w-100" alt="...">
+      </div> -->
+      <!-- <div class="carousel-item">
+        <img src="{% static 'assets/img/about.jpg' %}" class="d-block w-100" alt="...">
+      </div> -->
+    </div>
+  </div>
+{%endblock%}
+
+{%block about_services %} 
+  <div class="container py-5" id="about">
+    <div class="jumbotron">
+      <div class="row">
+        <div class="col lg-6 md-6 sm-12">
+          <img src="{% static 'assets/img/hero-img.svg' %}" alt="" width="400px">
+        </div>
+        <div class="col lg-6 md-6 sm-12">
+          <h1>About Us</h1>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos, veritatis at fugit molestiae nobis pariatur laborum non quas nulla quod dolor rem similique eius facere maxime eveniet reprehenderit optio corrupti. <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi nulla officia illo! Ut voluptatum pariatur eveniet expedita fugiat fuga ipsam sint illum maiores, minus ad in magnam debitis ipsum error.</p>
+          <button type="button" class="btn btn-success">Voir Plus</button>
+        </div>
+      </div>
+    </div>
+  </div>
+{%endblock%}
+{%block services%} 
+  <div class="container py-5">
+    <div class="jumbotron">
+      <h1 class="h1 text-center py-5">Services</h1>
+      <div class="row">
+        {% for service in services %}
+        <div class="col lg-4 md-6 sm-12">
+          <img src="{{service.image.url}}" alt="" width="400px">
+         <h5>{{service.name}}</h5> 
+         <p>{{service.text}}</p>
+         <button type="button" class="btn btn-success">Voir Plus</button>
+        </div>
+        {%endfor%}
+        <!-- <div class="col lg-4 md-6 sm-12">
+          <img src="{% static 'assets/img/hero-bg-abstract.jpg' %}" alt="" width="400px">
+          <h5>AMBASSADE DU NIGER AU GHANA.</h5>
+        </div>
+        <div class="col lg-4 md-6 sm-12">
+          <img src="{% static 'assets/img/hero-bg-abstract.jpg' %}" alt="" width="400px">
+          <h5>AESNG - Association des Etudiants et Stagiaires Nigeriens au Ghana.</h5>
+        </div> -->
+      </div>
+    </div>
+  </div>
+{%endblock%}
+{%block annonces%} 
+  <div class="container py-5" >
+    <div class="jumbotron">
+      <h1 class="h1 text-center py-5">Annonces</h1>
+      {% for actu in actus %}
+      <div class="card mb-3">
+        <img src="{{actu.image.url}}" class="card-img-top" alt="..." height="500px">
+        <div class="card-body">
+          <h5 class="card-title">{{actu.titre}}</h5>
+          <p class="card-text">{{actu.text}}</p>
+          <p class="card-text"><small class="text-muted">Last updated {{actu.date}}</small></p>
+        </div>
+      </div>
+      {%endfor%}
+      <!-- <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+        <img src="..." class="card-img-bottom" alt="...">
+      </div> -->
+    </div>
+  </div>
+{%endblock%}
+
+{%block partenaires%} 
+  <div class="container py-5">
+    <div class="jumbotron">
+      <h1 class="h1 text-center py-5">Partenaires</h1>
+      <div class="row">
+        {% for part in partenaires %}
+        <div class="col lg-4 md-6 sm-12">
+          <img src="{% static 'assets/img/hero-bg-abstract.jpg' %}" alt="" width="400px">
+         <h5>{{part.name}}</h5> 
+        </div>
+        {%endfor%}
+        <!-- <div class="col lg-4 md-6 sm-12">
+          <img src="{% static 'assets/img/hero-bg-abstract.jpg' %}" alt="" width="400px">
+          <h5>AMBASSADE DU NIGER AU GHANA.</h5>
+        </div>
+        <div class="col lg-4 md-6 sm-12">
+          <img src="{% static 'assets/img/hero-bg-abstract.jpg' %}" alt="" width="400px">
+          <h5>AESNG - Association des Etudiants et Stagiaires Nigeriens au Ghana.</h5>
+        </div> -->
+      </div>
+    </div>
+  </div>
+{%endblock%}
+
+{%block contact%} 
+  
+{%endblock%}
+

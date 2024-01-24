@@ -1,0 +1,84 @@
+{%extends 'base.html'%}
+{%load static%}
+{% load crispy_forms_tags %}
+
+{%block title%}Services{%endblock%}
+<!-- services -->
+{%block services%} 
+  <!-- <div class="container py-5">
+    <div class="jumbotron">
+      <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Services</a></li>
+        </ol>
+      </nav>
+      <div class="row">
+        {% for service in services %}
+        <div class="col lg-4 md-6 sm-12">
+          <img src="{{service.image.url}}" alt="" width="400px">
+          <h5>{{service.name}}</h5> 
+          <p>{{service.text}}</p>
+          <a href="#"><button type="button" class="btn btn-success">Faire une demande</button></a>
+        </div>
+        {%endfor%}
+      </div>
+    </div>
+  </div> -->
+
+  <!-- Form -->
+
+  <div class="container test">
+    <div class="jumbotron">
+      <h4>Faire Votre demande de Renouvellement de la la Bourse et/ou de Remboursement des Frais de Scolarites </h4>
+      <br>
+        <h5>Veuillez remplir le formulaire suivant.</h3>
+          <br>
+      <form enctype="multipart/form-data" method="POST">
+        {% csrf_token %}
+        {{demandes_form | crispy }}
+        <br>
+        <input class="btn btn-success"  type="submit" name="" value="Soumettre">
+      </form>
+    </div>
+  </div>
+
+{%endblock%}
+
+
+<!-- {%block Dashboard%} 
+  <div class="container py-5">
+    <div class="jumbotron">
+      <h1 class="h1 text-center py-5">Dashboard</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+          </tr> 
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+{%endblock%} -->
